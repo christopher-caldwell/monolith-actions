@@ -4,8 +4,8 @@ on:
   pull_request:
     branches:
       - develop
-    paths:
-      - 'ui/*'
+    # paths:
+    #   - 'ui/*'
 
 jobs:
   lint:
