@@ -21,9 +21,9 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Change Directory to UI
-      run: cd ui
     - name: Install Packages
+      working-directory: ./ui
       run: yarn
-    - name: Build page
+    - name: Lint
+      working-directory: ./ui
       run: yarn lint
