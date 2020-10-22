@@ -4,8 +4,8 @@ on:
   pull_request:
     branches:
       - develop
-    # paths:
-    #   - 'ui/*'
+    paths:
+      - 'ui/**'
 
 jobs:
   lint:
@@ -22,6 +22,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: Install Packages
+      working-directory: ./ui
       run: yarn
-    - name: Build page
+    - name: Lint
+      working-directory: ./ui
       run: yarn lint
